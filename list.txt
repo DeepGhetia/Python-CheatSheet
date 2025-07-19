@@ -1,0 +1,113 @@
+***never forget string, list, dic, set, tup all are iterators.***
+
+new thing to note is 
+lt.append(i) always single ele be it int or list or anything
+lt.extend(i) always indivial elements from any iterable like ex:- [1,2] is iter hence 1 and 2 are added at the end individual in single step.
+also note extend method only takes iterable only.
+
+imp note:-
+1. merginig two list - lt1 + lt2
+2. merging two dict - {i:j for a in [dic,dic1] for i,j in a.items()}
+3. merging two tup - tup + tup1
+4 merging two set - {j for i in [s,s1] for j in i}
+
+four thigns to remeber in list -
+1. when going for consecutive iteration go for last ele - 1 check list.py
+2. when goin for split the list in equal len go for split with step logic easy or go for list slicing rotation prob (eg)
+3. when dealing with index problem always go for enum or range(lt)
+4. for swapping that is rotation problem always go for split or slicing logic.
+
+when using 
+1. count/freq/duplicates use dict - also keep in mind count mthod is list is also useful
+2. common - set
+2. del list is also imp.
+3. merge - union, intersection, difference, issubset
+4. max() can also have max(map(sum,lt)) , max(lt,key=sum), max(lt,key=len), max(lt, key=lt.count)
+5. 2d cannot be directly used as dict keys always note convert to tuple first
+6. list tuple, dict set imp
+7. not in, in imp ***not is very imp***
+8. all() and any() imp 
+9. string imp
+10. isinstance(lt,list) - single,  isinstance('a',(str,list,tuple,dict)) - mulitple
+11. for consecutive ele in list check list.py 
+12. to get every nth value always go for for of n
+13. iterating two things simultanously means zip()
+14. iterating two things not simultanously means double for statement
+15. when ever you want to add nested list itme in dict u need to use tuple always 
+16. is and == diff imp
+17. reassigning is very imp note that check list.py it has some very imp questions
+18. enumeration is the key see if can be applied during index prop in slicing is also very helpful and keep a note blem
+19. list mein hamesha yaad rkhna when iterating in for loop keep brain wide open
+20. bonus tip always try to create intermediate list or dic, or even string's and then add it to the final open
+21. any question regarding index always go for enum or range(len(lt))
+22. so the hack here is always go for range(len(lt)) or enum during index problem's
+23. if lt or if not lt
+24. using step option it.
+25. for _ in range() is also imp keep in mind to use it please.
+26. imp thing to note is string ka concept.
+27. imp to note in list when there is a question for split list always go for split logic and always note: step optin is really imp.
+28. remeber None keyword also its useful.
+29. another useful note when step is invloved in for loop then i will be respect to step but i+1 is just 1 increment
+30. None is a special case single object hence we can directly use "is None or is not None".
+31. to get transpose matrix of 2d list go for """for i in zip(*lt)"""
+32. lt = [[1,2,3],[4,5,6],[7,8,9]]
+note here above 1,4,7 are col 1 and 2,5,8 are col 2 and last is col 3
+33. row = len(lt) in above col is len(lt[0])
+34. imp thing to note is 2d list can not be input for set.
+35. also imp note is that floor and ceil are in math module.
+36. iter() can help it is really important keep a note of it.
+37. sum(1 for i in lt) -> very imp in case of getting count/freq
+38. enum method can take any iterators.
+39. remeber you can use else with for also - 
+/////////////
+for i in s:
+    if i in lt.keys():
+        print(i)
+        break
+else:
+    print(None)   - also note when wrtiting func we can directly use return no need else.
+/////////////
+
+/////////////
+always remeber this kind of unpacking
+lt = [((1,2),'deep'),((4,5),'ghetia')]
+
+for (i,j),k in lt:
+    print(i,j,k)
+/////////////
+40. use of map is really helpful always remeber.
+41. use of reduce - 
+from functools import reduce
+lt = [1,2,3,4,5]
+print(reduce(lambda x,y: x if x>y else y , lt)) 
+
+42. break is imp note the wordings break has to be added then and there it self.
+43. strictly remeber never use same cont in single if else block it is really imp to note this - 
+classic example this one - 
+lt = [3,10,4,7,5,7,8,3,3,4,5,9,3,4,9,8,5]
+count = 0
+deep = []
+for i in lt:
+    if i%2==0:
+        count+=1
+    if i%2!=0:
+        deep.append(i)
+    elif count > 4 and i%2==0:
+        deep.append(i)
+print(deep)
+
+44. imp que - 
+lt = [['a', 'b', 'c'], ['b', 'c', 'd'], ['c', 'd', 'e']]
+first = lt[0]
+final = []
+for i in first:
+    if (i in lt[1]) and (i in lt[2]):
+        final.append(i)
+print(final)
+45. all the subsets que
+from itertools import combinations
+
+lt = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+summ = 10
+final = [list(combinations(lt,i)) for i in range(len(lt)+1)]
+print([(i) for i in [j for i in final for j in i] if sum(i)==summ])

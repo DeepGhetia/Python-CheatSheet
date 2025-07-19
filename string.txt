@@ -1,0 +1,27 @@
+1. import string
+
+    s = 'String! With. Punctuation?'
+    for i in string.punctuation:
+        s = s.replace(i,'')
+    print(s)
+
+2.   note here that any function in string doesnt update the same string they return new one.
+
+    | Method         | Capitalizes                           | Lowercases        | Multi-word Handling |
+    | -------------- | ------------------------------------- | ----------------- | ------------------- |
+    | `capitalize()` | Only first character of entire string | Rest of string    | No                  |
+    | `title()`      | First letter of each word             | Rest of each word | Yes                 |
+
+3. keep in mind always try to create new string whenever possible.
+4. string ke andar list use karna is not mandatory u can go for generator's.
+5. replace func is the boon in string.
+6. these tpe of questions increase confidence - 
+
+import string
+s = 'Python'
+dic = {v:i for i,v in enumerate(string.ascii_lowercase, start=1)}
+lt = []
+for i in s.lower():
+    if i in dic:
+        lt.append(dic[i])
+print(lt)

@@ -1,0 +1,94 @@
+1. Series - 
+* series can have multiple mixed dtype(data types) just like a list.
+* by default - int64, float64, (mixed-types) - object, all string (object(slower) or string(faster)), dict,list(object)
+* series vs df - series no col name but df does.
+* syntax = pd.Series(data, index, dtype, copy, name)
+    data - lt, dic, etc
+    index - default - [0,1...] [optional]
+    dtype - optional
+    copy - optional [two options - True or Fasle]
+    name - placeholder if only playing with series but when you convert s to df then name will act as col name in df created.
+* converting s to df is easy using pd.concat or pd.merge
+        syntax - 
+        s = pd.Series(dic, index=[1, 2], name='deep')
+        s1 = pd.Series(dic1, index=[1, 2], name='ghetia')
+        df = pd.concat([s,s1],axis=1)
+* now to convert df to s - 
+        syntax - 
+        1. s = df.squeeze() #single col in df
+        2. s = df['name'].squeeze() #multiple cols
+        3. s = df.iloc[2].squeeze() #converting individaul rows to series
+* also type conversion of a series - 
+    s = s.astype('float64')
+* for serries it is s.dtype(series) not s.dtypes(df's)
+* attributes and imp method's - 
+    # s.dtype -> type
+    # s.values -> values in nupmy array form of list not normal list to convert to normal list [i.item() for i in i.values]
+    This above conversion can directly done from s.values to list if dtype is string or object not int64 or float64.
+    # s.name -> name or placeholder
+    # s.index -> list of but of type pandas can be converted easily to list
+    # s.size -> len
+    # s.shape -> (row,col) but in this case (always row,)
+    # s.empty -> true if empty
+    # s.isnull()/notnull() -> this is a method gives true if blank else flase but row index wise
+    # s.unique() -> it gives numpy array of unique values and follow same process same as s.values
+    # s.nunique() -> give the count of unique values **count.
+    # s.head()/s.tail() -> by default 5
+    # s.loc[] / s.iloc[]
+    consider this below example to better learn - 
+        lt = [1,2,3,4,5,6,7,8,9,10,11]
+        s = pd.Series(lt, index=[9,9,9,9,9,9,9,9,9,9,9], name='deep')
+        print(s.iloc[9]) #this gives index(not man made) based retrieval also here you can get only one value as index is unique
+        print(s.loc[9]) # this gives index(man made) based retrieval but here you can have duplicates
+    # s.hasnans -> return true if any nan value else False not a record level
+* use of s.str and s.dt attribute but along with str and dt methods - 
+    STR.
+        Note:- str can only be used when data is object and string only and similar for datetime64[ns] as dt
+            # we can use the str.func() syntax - 
+            1. s.str.lower(), upper(), strip(), lstrip(), rstrip(), title(), capitalize(), replace() - almost all the string func works
+            2. we can use s.len() to get the len
+            3. for substring/slixcing we can use str.slice(strart, end, step)
+            4. str.contains(data, case=True/False, na(np.nan)=True/False, regex=True/False) - pattern matching imp concept.
+        Note in str attribute is all the functions are same as python just few differences.
+    DT.
+        Note in: Dt we have multiple attributes -
+        1. .dt.day, month, year, hour, minute, second, microsecond, nanosecond (all date attributes)
+        2. .dt.date, .dt.dayofweek, .dt.week, .dt.quarter (all date attributes)
+        3. .dt.time, .dt.total_seconds() (all time attributes)
+        Note in: Dt we have multiple methods -
+        1. .dt.strftime() to string
+        2. p.to_datetime(s, format='') to datetime
+        3. noraml strftime %u gives 1-7 but dayofweek in series gives 0-6
+* null's in pandas is consistent across df and series - 
+    # majorly sirf 4 type ke null hai in pandas - 
+    # np.nan -> works for float64, object toh agar mere code mein [1, np.nan, 2] toh type float6 ho jayega
+    # pd.NA -> works for Int64 not int64, string, object boolean not bool
+    # None -> works for object /string but when [1,none,2] then output is float64
+    # pd.NaT -> only datetime, timedelta
+
+    Value	isnull()	Default dtype	Notes
+    np.nan	✅ True	float64, object	Default for numeric nulls
+    None	✅ True	float64 or object	Casts to np.nan or object
+    pd.NA	✅ True	depends on dtype	Requires nullable type (Int64, etc.)
+    pd.NaT	✅ True	datetime64[ns]	Specific to time types
+
+    | Data Type | Recommended `dtype` |
+    | --------- | ------------------- |
+    | Integer   | `"Int64"`           |
+    | String    | `"string"`          |
+    | Boolean   | `"boolean"`         |
+    | Datetime  | `"datetime64[ns]"`  |
+
+* filtering (series) - 
+    # in filtering the main thing to note is this line condtion = udf and final_s = s[condition]
+    # we can apply custom .apply() and .map() methods and filter the rows appropriately.
+    # we can use multiple condition using &(and), |(or), ~(not) oper - do check series.python
+    # also brakcets are very imp when it comes don to filtering.
+* to get the iloc values when different from loc use - 
+    s.index.get_loc('pass loc val')
+* to get the loc values we can use s.items() mthod ascts same as dic.
+
+    
+to do - 
+# you also have to do accessing the elemtns in series ex s[s==2] = val - filterings
+#general func()
