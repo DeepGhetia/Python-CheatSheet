@@ -12,19 +12,13 @@ dic = {}
 
 for i,j in dict1.items():
     if i not in dict2:
-        if isinstance(j,dict):
-            dic[i] = {key:val for key, val in j.items()}
-        else:
-            dic[i] = j
+        dic[i] = j
     else:
         dic[i] = {key:val for a in [j,dict2[i]] for key,val in a.items()}
 
 for i,j in dict2.items():
     if i not in dict1:
-        if isinstance(j,dict):
-            dic[i] = {key:val for key, val in j.items()}
-        else:
-            dic[i] = j
+        dic[i] = j
     
 print(dic)
 

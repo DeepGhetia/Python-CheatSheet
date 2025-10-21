@@ -1,3 +1,5 @@
+#always remember when ever we wanto replace multiple things in string or list or any thing alsways go fro s.replace()
+
 1. import string
 
     s = 'String! With. Punctuation?'
@@ -25,3 +27,13 @@ for i in s.lower():
     if i in dic:
         lt.append(dic[i])
 print(lt)
+
+#s.split(' ')
+there one space refers to remove this one string and count the rest in the complete string
+
+#formatted multiple string inside a single {} ka hack - 
+    s = 'deep'
+    s1 = 'ghetia'
+    print(f'{s+'-'+s1}')
+
+using \n \t is often helpful during writing contents in fies. escape chars 

@@ -1,7 +1,19 @@
 #think logically pleae incase of list, tup, dic, set
 
+#only == and != can work for string
+#using multiple for loops is the key remeber that
+#'deep'*2 = 'deepdeep' similarly lt = [2], lt*2, [2,2]
+#whenever you use range() in for always rmeeber upper range or just a sngle num in range is always equal to no of iterations
+# more important null in python means None singleton object
+# be it any method/func comp will yield true/false and rest will yield value (comaprison ops gona yield you true/flase with even writing if else block)
+
+#return statement and comparison operator compliment each other.
+# def func->int: #good way to use func
+
+# ** is represented as power
 #abs method is also cu=rucial.
 #sorting cannot take place for int and str together at once ***
+#also avoid sorting noumbers in string format****
 
 #one of the good observation is 
 # 1. type(val) == int
@@ -11,8 +23,10 @@
 ########
 # good example for lambda
 # # syntax
+# lambda is one liner no () braces
 # x = lambda param1, param2, param3: param1 + param2 + param2
-# print(x(arg1, arg2, arg3))
+# lambda arguments: value_if_true if condition else value_if_false
+# print(x(arg1, arg2, arg3)) // the main job of lambda is to evaluate the expression and output the result based on th exp
 
 ######
 # in func always remeber if not return type func returns none also if just return statement it also returns None
@@ -30,6 +44,8 @@
 # True is treated as the integer 1
 
 # False is treated as the integer 0
+
+#bool and int are bro's
 
 s='3'
 if 3 == s:
@@ -70,7 +86,7 @@ else:
 # Integer	❌ No	2 in 12345 → TypeError
 
 # map metod takes 2 input 1st is func can be int str or even lambda secnond is iterable
-# always note while using dic in for loop left hand data before  = always menas key and right hand data after = always means values
+# always note while using dic in for loop left hand data before = always menas key and right hand data after = always means values
 #always keep note that for swapping alays go or a,b = b,a
 
 lt = [1,2,3,4,5]
@@ -126,7 +142,7 @@ print(', '.join(str(i) for i in range(1,6)))
 # Yes, exactly! 🔥
 # .zfill(length of string) pads zeros on the left side of a string until it reaches the length you specify.
 
-#strip(), find(), index(), for in, split(), join(), upper(), lower(), replace(',',' '), s.startswiht('c'), rfind, find, isdigit()
+#strip(), splitlines(), find(), index(), for in, split(), join(), upper(), lower(), replace(',',' '), s.startswiht('c'), rfind, find, isdigit()
 # isalpha, rindex, rfind, endswith('b'), isupper(), islower(), isalnum(), title() -> capitalize the words i.e. "Deep", count()
 #always keep substring logic handy
 #break, pass, True, False
@@ -138,6 +154,7 @@ print(', '.join(str(i) for i in range(1,6)))
 # Then, print the modified 'str1' with trailing whitespace removed.
 # print(str1.rstrip()) 
 
+#works only with int
 # x = 123456789
 # print(f"{x:,}")
 
@@ -230,7 +247,7 @@ print(', '.join(str(i) for i in range(1,6)))
 # we can also use relativedelta(d1,d2).days or months or years to get datefdeiff
 # and to add dates always go for timedelta and reltivedelta
 
-# zip method outputs tuples 
+# zip method outputs tuples
 # whenevr yu se nested things always go for for for in comprehension
 
 # #dict
@@ -363,7 +380,7 @@ lt1 = [6, 7, 8, 9, 0]
 #             s1+=i[j]
 # print(s1.replace(',',' '))
 
-# | Type    | Ordered | Indexed | Mutable | Allows Duplicates | Key-Based Access |
+# | Type    | Ordered | Indexed | Mutable(add/remove) | Allows Duplicates | Key-Based Access |
 # | ------- | ------- | ------- | ------- | ----------------- | ---------------- |
 # | `list`  | ✅ Yes   | ✅ Yes   | ✅ Yes   | ✅ Yes             | ❌ No             |
 # | `tuple` | ✅ Yes   | ✅ Yes   | ❌ No    | ✅ Yes             | ❌ No             |
@@ -382,6 +399,6 @@ lt1 = [6, 7, 8, 9, 0]
 
 # | Purpose                              | Function to Use              | What It Does                                           | Example Idea                     |
 # | ------------------------------------ | ---------------------------- | ------------------------------------------------------ | -------------------------------- |
-# | **Transform each item**              | `map(function, iterable)`    | Applies a function to every item, returns new iterable | Convert all strings to uppercase |
-# | **Select items by condition**        | `filter(function, iterable)` | Keeps only items where function(item) is True          | Keep only even numbers           |
-# | **Combine all items into one value** | `reduce(function, iterable)` | Repeatedly combines items to produce one result        | Sum all numbers, find max        |
+# | **Transform each item**    (transform)         | `map(function, iterable)`    | Applies a function to every item, returns new iterable | Convert all strings to uppercase |
+# | **Select items by condition**    (select)    | `filter(function, iterable)` | Keeps only items where function(item) is True          | Keep only even numbers           |
+# | **Combine all items into one value**   (group)  | `reduce(function, iterable)` | Repeatedly combines items to produce one result        | Sum all numbers, find max        |

@@ -1,3 +1,6 @@
+# file handling - 
+# A, W, R(BY DEFAULT), X(CREATE), t, b
+
 s = '''Inspirational quote
 Short story or scene
 Poem (any style)

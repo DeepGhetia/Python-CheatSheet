@@ -1,6 +1,26 @@
 ***never forget string, list, dic, set, tup all are iterators.***
 
-new thing to note is 
+*** alwasy remeber unpacking can only happen when we are trying to fetch two differnt types of ele 
+        ex:- lt = [[1,2,3],[4,5,6],[7,8,9]]
+                for i,j,k in lt this is not unpacking as all ele in lt are at same level
+             but for (i,j),k in [[[1,2],3],[[4,5],6],[[7,8],9]] but here it is, as one is iterable and other is not a iterable
+
+*** one good advice is say you have 2 iterators and you want to iterate both but want a single value then all()/any() is very helpfull.
+*** similart to string 'deep'*3 = deepdeepdeep like wise [2]*3 = [2,2,2] jaise string is one but deep repeats 3 times similarly lt is one but 2 repeats 3 times.
+*** list is dynamic len changes dynamically based on ele inserted/deletded.
+on replacing when replace with single values the replaced item is a list 
+on replacing the sliced list the items get unpacked.
+
+*** always remember in list whenever we use INSERT(pos,value) sataement in list then it will replcae the existing value and move the current value 
+    to next position but when we use lt[1] = 5 i.e. replacing the existing value only when list is existing it will just replace the
+    current value.
+*** also lt[0] = 5 is only possible when the list is already existing if not use lt.append/lt.extend
+
+***new normal -
+always try not to use list when converting an iterable to any type
+example use zip to convert the elements directly of type tuple to dict with list(zip(x,y))
+
+new thing to note is
 lt.append(i) always single ele be it int or list or anything
 lt.extend(i) always indivial elements from any iterable like ex:- [1,2] is iter hence 1 and 2 are added at the end individual in single step.
 also note extend method only takes iterable only.
@@ -10,20 +30,21 @@ imp note:-
 2. merging two dict - {i:j for a in [dic,dic1] for i,j in a.items()}
 3. merging two tup - tup + tup1
 4 merging two set - {j for i in [s,s1] for j in i}
+5. while unpacking when *var is used the output will always be a list no matter what type of ds it is.
 
 four thigns to remeber in list -
 1. when going for consecutive iteration go for last ele - 1 check list.py
 2. when goin for split the list in equal len go for split with step logic easy or go for list slicing rotation prob (eg)
-3. when dealing with index problem always go for enum or range(lt)
+3. when dealing with index problem always go for enum or range(len(lt))
 4. for swapping that is rotation problem always go for split or slicing logic.
 
 when using 
 1. count/freq/duplicates use dict - also keep in mind count mthod is list is also useful
 2. common - set
-2. del list is also imp.
+2. del list is also imp.  //del lt or del lt[i]
 3. merge - union, intersection, difference, issubset
 4. max() can also have max(map(sum,lt)) , max(lt,key=sum), max(lt,key=len), max(lt, key=lt.count)
-5. 2d cannot be directly used as dict keys always note convert to tuple first
+5. 2d list cannot be directly used as dict keys always note convert to tuple first
 6. list tuple, dict set imp
 7. not in, in imp ***not is very imp***
 8. all() and any() imp 
@@ -46,7 +67,7 @@ when using
 25. for _ in range() is also imp keep in mind to use it please.
 26. imp thing to note is string ka concept.
 27. imp to note in list when there is a question for split list always go for split logic and always note: step optin is really imp.
-28. remeber None keyword also its useful.
+28. remeber None keyword also is useful.
 29. another useful note when step is invloved in for loop then i will be respect to step but i+1 is just 1 increment
 30. None is a special case single object hence we can directly use "is None or is not None".
 31. to get transpose matrix of 2d list go for """for i in zip(*lt)"""
@@ -96,14 +117,6 @@ for i in lt:
         deep.append(i)
 print(deep)
 
-44. imp que - 
-lt = [['a', 'b', 'c'], ['b', 'c', 'd'], ['c', 'd', 'e']]
-first = lt[0]
-final = []
-for i in first:
-    if (i in lt[1]) and (i in lt[2]):
-        final.append(i)
-print(final)
 45. all the subsets que
 from itertools import combinations
 
@@ -111,3 +124,24 @@ lt = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 summ = 10
 final = [list(combinations(lt,i)) for i in range(len(lt)+1)]
 print([(i) for i in [j for i in final for j in i] if sum(i)==summ])
+
+46. remeber this logic - 
+lt = [1,2,3,4,5,6,7,8,9,10,11]
+k = 3
+final = [lt[i:i+k] for i in range(0,len(lt),k)]
+print(final)
+
+47.for i in range(len(lt)):
+    for j in range(i+1,len(lt)+1):
+        print(lt[i:j])
+
+48. for i in range(len(lt)):
+    for j in range(i+1,len(lt)):
+        final.append([lt[i],lt[j]])
+
+49.
+lt_index = [0,1,2,3,4....]
+reverse_lt_index = [....-4,-3,-2,-1]
+
+when choosing reverse move from behind to beg and -1
+when moving from beg to end be it in neg or pos way you get slicing

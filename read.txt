@@ -1,3 +1,4 @@
-account,cardinfo,name,age
-007,4356,deep,25
-009,5674,ghetia,35
+Name,Age,DOB
+deep,26,06-07-1999
+gehtia,27,30-07-2019
+adi,28,06-07-199
