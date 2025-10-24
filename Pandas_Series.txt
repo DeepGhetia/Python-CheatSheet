@@ -8,7 +8,8 @@ Some rules in Seres and Df
     3. adding values to col in df when newly created we can add scalar,lt,series as index is already present in existing df.
         But note here when series is passed the index is imp as the data is mapped with existing df index if no match then nan.
     4. But one catch while pasing None value in s it should not be a scalar value.
-
+    5. Any operation along with Null will always return Null value.
+    
 1. Series - 
 * series can have multiple mixed dtype(data types) just like a list.
 * by default - int64, float64, (mixed-types) - object, all string (object(slower) or string(faster)), dict,list(object)
@@ -259,7 +260,7 @@ df['col'] = df['col'].shift(1/-1) -> -1 = lead and 1 = lag
             1. by default index/columns needed and aggfunc = mean(auto applied if not passed)
             2. If you want both group-by columns as row hierarchy → put both in index.
                If you want one to spread horizontally like pivoted columns → put one in index, one in columns.
-            3. when passing multiple col's use list in index/columns/values but for aggfunc use dic.
+            3. when passing multiple col's use list in index/columns/values but for aggfunc use dic {colanme:func}
             # reset_index() is also usefull unlike in groupby
     
     3. MELT METHOD - USED TO UNPIVOT THE PIVOTTED DATA FROM PIVOT/PIVOT_TABLE
@@ -270,10 +271,7 @@ df['col'] = df['col'].shift(1/-1) -> -1 = lead and 1 = lag
             value_vars -> It is the col that needs to be unpivotted
             var_name -> u=once unpivot is completed it is the name of that col
             value_name -> it is the col name of unpivotted data col
-
-to do - 
-#you also have to do boolean filteration
-#general func()
+            #when unpivotting valuevars has to be passed with list of col name
 
 Points to Note:-
 1. In DF row = Index, Col is tho Col only remeber that.

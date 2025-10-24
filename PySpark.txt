@@ -1,0 +1,43 @@
+Note:- 
+1.Pyspark is list and tup friendly and not dic.
+2. Packing and Unpacking concept is imp here.
+
+from pyspark.sql import SparkSession
+from pyspark.sql.types import *
+from pyspark.sql.functions import col, lit, row, upper, lower, cast(astype can also be used but astype is builtin), concat, datediff, concat_ws, when, round
+#an hack cocnat() and concat_ws() does implicit casting of int/float etc to stirng before concatenating.
+
+#selecting a col 
+    # 1. df['col']
+    # 2. df.col1
+    # 3. col('col1')
+
+lit()
+    #lit method is used to add any literal or broadcast the literal to existing df in a new/existing col
+    # this can be used with withColumn() method
+
+
+#withColumn(), withColumnRenamed(), drop()
+
+    1. we can change the data type using this mthod for existing one using cast() from fucntions or astype a default functions
+    2. we can create a new col or update the existing one - 
+        //we can add lit() - adding literal val
+        //perform arithmatic ops
+        //perform all sorts of operations on diff cols
+        //use multiple col methods from functions
+        //using when().otherwise() and &,|,~ in then along with () also note - 
+            - syntax - when(cond,val).otherwise(val)
+        //we can rename the cols using withColumnRenamed(oldname,new name) to rename multiple loop a list of tup and then unpack them using *i
+        //also can drop the cols using df.drop(colname) to drop multiple directly pass unpacked list like *lt
+    3. Note all these can be done In a single line using chaining concept similar to pandas.
+
+        Ex:- df = (
+            df.withColumn("new_col", col("a") + 10)
+            .withColumnRenamed("b", "b_new")
+            .drop("c")
+        )
+
+
+
+
+    

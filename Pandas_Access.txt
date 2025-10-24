@@ -35,3 +35,10 @@ contains = like
 multiple contains (|) = like or //we can also use any()/all()
 .between and .replace()
 
+#
+1. rearranging cols
+2. df.rename(columns={}, inplace=True/Fasle)
+3. selecting df[[col1 ,col2]]
+4. chaining means multiple func applied in a single line
+5. 
+
