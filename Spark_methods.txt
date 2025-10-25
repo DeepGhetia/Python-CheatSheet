@@ -9,3 +9,25 @@ Default methods
     8. startswith() and endswith()
     9. isNull() and isNotNull() note diff frm pandas notnull() and isnull()
     10. alias() -> note this gives only temp rename not like withColumnRenamed()
+
+Functions/Methods under pyspark.sql.functions - 
+2. col() is used to select the col
+3. round, ceil, floor, abs ,pow, sqrt
+4. for literal we use lit() -> very imp
+5. when()/otherwise() -> very imp
+6. colaesce() for getting first not null value coalesce(col1,col2,col3) note this is diff from df.colaesce() //repartitioning
+7. greatest() and least() works same a coalesce() across columns but gives max and min values also ignores the null means will return the output
+
+Str - 
+1. upper, lower, length, substring, initcap() same as (title in py)
+2. trim , ltim, rtrim
+3. substring (len mandatory)
+4. to replace we have to use regexp_replace(col,this,with that)
+5. translate() ->
+        ex:- translate(col, 'aA', 'bB')
+                this is also used to replace but char to char mapping a->A, b->b
+6. cocnat() vs concat_ws() 
+    //cocnat is used to concat multiple strings with literal but literal explicitly passed but cocnatws not passing extra
+    //null in one string in concat means complete string null but not in case of concat_ws
+7. for index/find we have instr(colname, 'get pos for this')
+8. split() in spark split(colname,sep)
