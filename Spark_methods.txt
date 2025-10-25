@@ -1,11 +1,11 @@
 Default methods
     1. astype()
     2. between()
-    3. contains() -> no other options like case=True/False this method is by default case sennsitive
+    3. contains() -> no other options like case=True/False this method is by default case sennsitive also multiple | cannot be used hence use & or | operations in braces.
     4. isin([]) we can also use ~col('col1').isin([]) for interchangigng values (smart move)
     5. like() similar to sql -> One note in pandas we have | inside contains for multiple but in spark we have to col('col1').contains('a') | (col('col2').contains('b'))
     6. substr() -> col('name').substr(pos,len) #here lenght is imp but not in sql
-    7. when().otherwise()
+    7. when().otherwise() //but when() is not a built in method
     8. startswith() and endswith()
     9. isNull() and isNotNull() note diff frm pandas notnull() and isnull()
     10. alias() -> note this gives only temp rename not like withColumnRenamed()
