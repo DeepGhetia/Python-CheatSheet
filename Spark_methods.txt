@@ -29,5 +29,10 @@ Str -
 6. cocnat() vs concat_ws() 
     //cocnat is used to concat multiple strings with literal but literal explicitly passed but cocnatws not passing extra
     //null in one string in concat means complete string null but not in case of concat_ws
-7. for index/find we have instr(colname, 'get pos for this')
+
+    cocnatws (usecase):-
+    1. join() in python is applied to a list consider as it as single col we can do same in spark concat_ws(','col('name'))
+    2. cocnatws can also be used to concat 2 or more cols
+
+7. for index/find we have instr(colname, 'get pos for this') //if pos not available then 0 but in py find gives -1 and index gives exception
 8. split() in spark split(colname,sep)

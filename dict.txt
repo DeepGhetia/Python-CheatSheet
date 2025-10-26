@@ -1,4 +1,4 @@
-tuple - 
+tuple (immutable) -
 cannot do anthing with tuple after creation just can del the complete tuple
 indexing/accessing is possible
 

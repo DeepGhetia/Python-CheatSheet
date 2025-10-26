@@ -1,5 +1,5 @@
 Note:- 
-1.Pyspark is list and tup friendly and not dic.
+1. Pyspark is list and tup friendly and not dic.
 2. Packing and Unpacking concept is imp here.
 3. pyspark follows strictness (example data types like array and map) and immutability (example creating a new df).
 
@@ -13,6 +13,10 @@ from pyspark.sql.functions import col, lit, row, upper, lower, cast(astype can a
     # 2. df.col1 \\this is little risky based on the col name
     # 3. col('col1') \\for this we need col form pyspark.sql.functions
     # 4. col('name.firstname') or df['name.firstname'] note here name.firstname mein firstname is nestedcol
+
+#Big Update - 
+1. df[col] - while chaining exp this can give error then second chain is applied to first col created as df[col] return col object #hence df[col] not good for chaning
+2. col(col1) -  good for chaining and always recomended
 
 lit()
     #lit method is used to add any literal or broadcast the literal to existing df in a new/existing col
@@ -41,6 +45,6 @@ lit()
     4. withColumnRenamed()
         //concept of renaming the nested columns is also an impotnat concept as doing it and dropping the main col makes sense.
 
-#df.fillna() -> exactly same as pandas no change but diff 
+#df.fillna() -> exactly same as pandas no change but diff
     1. between coalesce for (fewer cols) and fillna (for entire or small df)
     2. repalcing one col value to other can be done using colaesce but not in fillna

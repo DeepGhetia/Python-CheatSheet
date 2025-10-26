@@ -80,7 +80,7 @@ Some rules in Seres and Df
         Also for reversingor choosing a string from list etc:- we can directly use .str[::-1] or .str[0]
     DT.
         Note in: Dt we have multiple attributes -
-        1. .dt.day, month, year, hour, minute, second, microsecond, nanosecond (all date attributes)
+        1. .dt.day, month, year, hour, minute, second, microsecond, nanosecond (all date attributes), .dt.days
         2. .dt.date, .dt.dayofweek, .dt.week, .dt.quarter (all date attributes)
         3. .dt.time, .dt.total_seconds() (all time attributes)
         Note in: Dt we have multiple methods -

@@ -1,4 +1,5 @@
 #always remember when ever we wanto replace multiple things in string or list or any thing alsways go fro s.replace()
+# alwasy remember strings are immutable please do not forget this
 
 1. import string
 
