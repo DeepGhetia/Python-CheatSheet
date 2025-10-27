@@ -29,6 +29,7 @@ Str -
 6. cocnat() vs concat_ws() 
     //cocnat is used to concat multiple strings with literal but literal explicitly passed but cocnatws not passing extra
     //null in one string in concat means complete string null but not in case of concat_ws
+    //note both support implicit converstios from int/float tostring that measn works for other types except strng
 
     cocnatws (usecase):-
     1. join() in python is applied to a list consider as it as single col we can do same in spark concat_ws(','col('name'))
@@ -36,3 +37,15 @@ Str -
 
 7. for index/find we have instr(colname, 'get pos for this') //if pos not available then 0 but in py find gives -1 and index gives exception
 8. split() in spark split(colname,sep)
+
+Datetime - 
+before moving to dattime func's we got to cover the datetime data dtypes
+1. DataType()
+2. TimestampType()
+3. TimestampNTZType()
+
+Always Note:- 
+1. while working with datetime while reading check properly if string or datetime generally it is string always we need to explicitly cast
+2. for filtering we can use string as no other option also implicit converstios happen
+3. using other func such as .dt.day we get integer
+4. always check the formatting

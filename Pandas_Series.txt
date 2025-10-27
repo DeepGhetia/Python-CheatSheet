@@ -9,7 +9,12 @@ Some rules in Seres and Df
         But note here when series is passed the index is imp as the data is mapped with existing df index if no match then nan.
     4. But one catch while pasing None value in s it should not be a scalar value.
     5. Any operation along with Null will always return Null value.
-    
+Always Note (FOR DATETIME hack):- 
+    1. while working with datetime while reading check properly if string or datetime generally it is string always we need to explicitly cast
+    2. for filtering we can use string as no other option also implicit converstios happen
+    3. using other func such as .dt.day we get integer
+    4. always check the formatting
+
 1. Series - 
 * series can have multiple mixed dtype(data types) just like a list.
 * by default - int64, float64, (mixed-types) - object, all string (object(slower) or string(faster)), dict,list(object)
@@ -81,8 +86,9 @@ Some rules in Seres and Df
     DT.
         Note in: Dt we have multiple attributes -
         1. .dt.day, month, year, hour, minute, second, microsecond, nanosecond (all date attributes), .dt.days
-        2. .dt.date, .dt.dayofweek, .dt.week, .dt.quarter (all date attributes)
+        2. .dt.date, .dt.dayofweek, .dt.isocalendar().week .dt.quarter (all date attributes)
         3. .dt.time, .dt.total_seconds() (all time attributes)
+        4. to get the week no in a month we use .dt.isocalendar().week
         Note in: Dt we have multiple methods -
         1. .dt.strftime() to string
         2. p.to_datetime(s, format='') to datetime
