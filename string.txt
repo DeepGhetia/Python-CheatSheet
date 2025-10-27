@@ -1,5 +1,6 @@
 #always remember when ever we wanto replace multiple things in string or list or any thing alsways go fro s.replace()
 # alwasy remember strings are immutable please do not forget this
+#always remember when you see a problem of time challenge then try to iterate from behind basd on problem Ex- 1903
 
 1. import string
 

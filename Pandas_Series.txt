@@ -93,6 +93,7 @@ Always Note (FOR DATETIME hack):-
         1. .dt.strftime() to string
         2. p.to_datetime(s, format='') to datetime
         3. noraml strftime %u gives 1-7 but dayofweek in series gives 0-6
+        
 * null's in pandas is consistent acrss dof and series - 
     # majorly sirf 4 type ke null hai in pandas - 
     # np.nan -> works for float64, object toh agar mere code mein [1, np.nan, 2] toh type float64 ho jayega
