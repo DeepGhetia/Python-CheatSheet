@@ -73,11 +73,36 @@ ArrayType Functions -
 1. to create an array from multiple col - array(col1,col2,col3)
 2. now similar to python's [1]*3 = [1,1,1] in spark it is array_repaet(col(col),3)
 3. array_position(col,ele) //if pos not available then 0 but in py index is used
-4. to acces it is col('col1)[0] //note here we can use slicing
+4. to acces it is col('col1')[0] //note here we can use slicing
 5. length of array - size() -> only for array type
 6. array_contains(col,val)
 
-Point to  learn
+Filter() vs where()
+    df.filter()
+        1. the input of filter() is same as boolean filtering in pandas i.e. same (),!|,~,&
+        2. we cn also give sql like filtering but in side '' Ex:- df.filter('age > 6')
+    df.where()
+        same as filter
+    Note:- only diff bteween 2 is filter is generaly used for pythonic coding and where for sql under the hood they are dicto same.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Point to learn
 need to learn - 
 Interval arithmetic:
 - col + expr("INTERVAL 5 DAYS")

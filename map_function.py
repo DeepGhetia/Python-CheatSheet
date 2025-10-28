@@ -246,6 +246,7 @@ print(', '.join(str(i) for i in range(1,6)))
 # normal days ka diff directly hojata hai but in days and sec as output is in timedelta
 # we can also use relativedelta(d1,d2).days or months or years to get datefdeiff
 # and to add dates always go for timedelta and reltivedelta
+# we can also create date and datetime using date(y,m,d) and datetime(y,m,d,h,m,s) this is similar to make_date() and make_timestamp() in spark
 
 # zip method outputs tuples
 # whenevr yu se nested things always go for for for in comprehension
