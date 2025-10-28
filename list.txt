@@ -138,6 +138,11 @@ print(final)
 48. for i in range(len(lt)):
     for j in range(i+1,len(lt)):
         final.append([lt[i],lt[j]])
+        
+49. for i in range(len(lt)):
+    for j in range(i+1, len(lt)):
+        for m in range(j+1, len(lt)):
+            result.append([lt[i], lt[j], lt[m]])
 
 49.
 lt_index = [0,1,2,3,4....]
