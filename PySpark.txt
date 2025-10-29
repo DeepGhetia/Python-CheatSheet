@@ -2,6 +2,8 @@ Note:-
 1. Pyspark is list and tup friendly and not dic.
 2. Packing and Unpacking concept is imp here.
 3. pyspark follows strictness (example data types like array and map) and immutability (example creating a new df).
+4. In pandas/py boolean and integer are bhai bhai but not in spark due to strictness
+5. Alwasy keep in mind while filtering use and/or properly based on requirement
 
 from pyspark.sql import SparkSession
 from pyspark.sql.types import *
@@ -30,6 +32,7 @@ lit()
         //perform arithmatic ops
         //perform all sorts of operations on diff cols
         //use multiple col methods from functions
+            Ex:- df.withColumn('first', col('status')=='Success') -> this is similar to applying boolean logic to a new df col in pandas
         //using when().otherwise() and &,|,~ in then along with () also note - 
             - syntax - when(cond,val).otherwise(val)
         //we can rename the cols using withColumnRenamed(oldname,new name) to rename multiple loop a list of tup and then unpack them using *i
