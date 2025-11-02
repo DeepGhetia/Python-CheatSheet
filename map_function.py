@@ -403,3 +403,5 @@ lt1 = [6, 7, 8, 9, 0]
 # | **Transform each item**    (transform)         | `map(function, iterable)`    | Applies a function to every item, returns new iterable | Convert all strings to uppercase |
 # | **Select items by condition**    (select)    | `filter(function, iterable)` | Keeps only items where function(item) is True          | Keep only even numbers           |
 # | **Combine all items into one value**   (group)  | `reduce(function, iterable)` | Repeatedly combines items to produce one result        | Sum all numbers, find max        |
+
+#questions like 2341 from LC are good one's to solve

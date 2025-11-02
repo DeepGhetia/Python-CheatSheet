@@ -21,7 +21,7 @@ Functions/Methods under pyspark.sql.functions -
 Str - 
 1. upper, lower, length, substring, initcap() same as (title in py)
 2. trim , ltim, rtrim
-3. substring (len mandatory)
+3. substring (len mandatory) very important
 4. to replace we have to use regexp_replace(col,this,with that)
 5. translate() ->
         ex:- translate(col, 'aA', 'bB')
@@ -36,7 +36,7 @@ Str -
     2. cocnatws can also be used to concat 2 or more cols
 
 7. for index/find we have instr(colname, 'get pos for this') //if pos not available then 0 but in py find gives -1 and index gives exception
-8. split() in spark split(colname,sep)
+8. split() in spark split(colname,sep) //split using . we  have to use \\. and to mimic list(str) -> split(col,'')
 
 Datetime - 
 before moving to dattime func's we got to cover the datetime data dtypes
@@ -73,7 +73,7 @@ ArrayType Functions -
 1. to create an array from multiple col - array(col1,col2,col3)
 2. now similar to python's [1]*3 = [1,1,1] in spark it is array_repaet(col(col),3)
 3. array_position(col,ele) //if pos not available then 0 but in py index is used
-4. to acces it is col('col1')[0] //note here we can use slicing
+4. to acces it is col('col1')[0] //note here we can use slicing or .getItem()
 5. length of array - size() -> only for array type
 6. array_contains(col,val)
 

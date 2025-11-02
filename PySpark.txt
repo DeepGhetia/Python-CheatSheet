@@ -30,6 +30,7 @@ lit()
     2. we can create a new col or update the existing one - 
         //we can add lit() - adding literal val
         //perform arithmatic ops
+        //perform comparison operation also like boolean filtering to get the values.
         //perform all sorts of operations on diff cols
         //use multiple col methods from functions
             Ex:- df.withColumn('first', col('status')=='Success') -> this is similar to applying boolean logic to a new df col in pandas
@@ -45,7 +46,7 @@ lit()
             .drop("c")
         )
 
-    4. withColumnRenamed()
+    4. withColumn()
         //concept of renaming the nested columns is also an impotnat concept as doing it and dropping the main col makes sense.
 
 #df.fillna() -> exactly same as pandas no change but diff
