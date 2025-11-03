@@ -52,3 +52,17 @@ lit()
 #df.fillna() -> exactly same as pandas no change but diff
     1. between coalesce for (fewer cols) and fillna (for entire or small df)
     2. repalcing one col value to other can be done using colaesce but not in fillna
+
+#df.select - for selecting the columns/creating new one's same as withColumn
+syntax - select(str/col)
+1. df.select(col('col'),col('col2')) to select few cols
+2. df.select(df.colmuns) to seelct all cols
+3. df.select(df.colmuns[1:3]) to select sliced colmuns same as pandas/py
+4. we can only use alias/expr() to create a new col in select no other way 
+
+#expr() from sql.functions module
+complete sql can be written in this expr() function alsong with alias like sql 'as'
+Ex:- expr('case when price between 80 and 500 then "decent" when price between 501 and 800 then "good" else "very good" end as comput')
+
+#df.seelctExpr(string only)
+1. in selectExpr we have to string only and expression can be directly written in sql expr

@@ -8,7 +8,8 @@ Default methods
     7. when().otherwise() //but when() is not a built in method
     8. startswith() and endswith()
     9. isNull() and isNotNull() note diff frm pandas notnull() and isnull()
-    10. alias() -> note this gives only temp rename not like withColumnRenamed()
+    10. alias() -> note this gives only temp rename not like withColumnRenamed() //used in select 
+    11. expr() -> used to use sql inside this pure sql like postgre eveything works
 
 Functions/Methods under pyspark.sql.functions - 
 2. col() is used to select the col
@@ -26,7 +27,7 @@ Str -
 5. translate() ->
         ex:- translate(col, 'aA', 'bB')
                 this is also used to replace but char to char mapping a->A, b->b
-6. cocnat() vs concat_ws() 
+6. cocnat() vs concat_ws()
     //cocnat is used to concat multiple strings with literal but literal explicitly passed but cocnatws not passing extra
     //null in one string in concat means complete string null but not in case of concat_ws
     //note both support implicit converstios from int/float tostring that measn works for other types except strng
@@ -76,6 +77,11 @@ ArrayType Functions -
 4. to acces it is col('col1')[0] //note here we can use slicing or .getItem()
 5. length of array - size() -> only for array type
 6. array_contains(col,val)
+7. array_distinct(col) // to remove dup
+8. array_union(col1,col2) // same as lt+lt1 in py
+9. sort_array(col, asc=True/False)
+10. array_zip(col,col)
+11. explode()
 
 Filter() vs where()
     df.filter()
