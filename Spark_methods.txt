@@ -81,7 +81,8 @@ ArrayType Functions -
 8. array_union(col1,col2) // same as lt+lt1 in py
 9. sort_array(col, asc=True/False)
 10. array_zip(col,col)
-11. explode()
+11. explode() -> array to indivial rows
+12. indivial rows to array back using agg and collect_list()/collect_set() in groupby
 
 Filter() vs where()
     df.filter()

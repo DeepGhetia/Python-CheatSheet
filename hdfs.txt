@@ -1,0 +1,3 @@
+hadoop fs / hdfs dfs (internally it calls hadoop fs only) - list of all commands available
+hadoop fs -ls - home directry
+

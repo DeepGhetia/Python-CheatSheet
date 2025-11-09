@@ -78,3 +78,9 @@ but cant directly use sum() as strict type also to check every col null values e
 
 2. we can drop null values - df.na.drop(how='any/all', subset=[]) or ddf.dropna(how='any/all', subset=[])
 Note:- spark doesnt drop columns as it doesnt have axis param but pandas does
+
+DUPLICATES:-
+to check duplicates use rank/groupby  - sql logic as there is none in spark
+to drop duplicates same as pandas  - 
+    1. df.distinct() check for complete rows no other paratmeter it takes
+    2. df.dropDuplicates(subset=) // same as pandas but no keep=

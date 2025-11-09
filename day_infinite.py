@@ -2,11 +2,12 @@ import pandas as pd
 import numpy as np
 
 data = {
-    'Name': ['Alice', 'Bob', 'Charlie', 'David', None],
-    'Age': [25, np.nan, 30, 22, 28],
-    'City': ['New York', 'Los Angeles', None, 'Chicago', 'Houston'],
-    'Salary': [None, None, np.nan, None, None]
+    'id': [101, 102, 103, 104, 105, 101, 103, 106],
+    'name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Alice', 'Charlie', 'Frank'],
+    'age': [25, 30, 35, 40, 22, 25, 36, 29],
+    'city': ['New York', 'Paris', 'London', 'Berlin', 'Paris', 'New York', 'London', 'Tokyo']
 }
 
 df = pd.DataFrame(data)
-print(df.dropna(axis=0,how='all',subset=['Salary']))
+df = df.drop_duplicates()
+print(df)
