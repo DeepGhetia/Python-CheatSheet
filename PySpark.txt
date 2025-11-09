@@ -4,7 +4,10 @@ Note:-
 3. pyspark follows strictness (example data types like array and map) and immutability (example creating a new df).
 4. In pandas/py boolean and integer are bhai bhai but not in spark due to strictness
 5. Alwasy keep in mind while filtering use and/or properly based on requirement
-
+6. Most important withcol and select works same row wise but there is a big dif
+    1. withcol works row wuse only and no groupbing/agg allowed also withcol is tough to use with more col at a time
+    2. select is dynamic wiorks rowwise also and agg also allowed but not together note that
+    
 from pyspark.sql import SparkSession
 from pyspark.sql.types import *
 from pyspark.sql.functions import col, lit, row, upper, lower, cast(astype can also be used but astype is builtin), concat, datediff, concat_ws, when, round
@@ -58,7 +61,8 @@ syntax - select(str/col)
 1. df.select(col('col'),col('col2')) to select few cols
 2. df.select(df.colmuns) to seelct all cols
 3. df.select(df.colmuns[1:3]) to select sliced colmuns same as pandas/py
-4. we can only use alias/expr() to create a new col in select no other way 
+4. we can only use alias/expr() to create a new col in select no other way
+5. we also can pass a list of col object basically col()
 
 #expr() from sql.functions module
 complete sql can be written in this expr() function alsong with alias like sql 'as'
@@ -66,3 +70,11 @@ Ex:- expr('case when price between 80 and 500 then "decent" when price between 5
 
 #df.seelctExpr(string only)
 1. in selectExpr we have to string only and expression can be directly written in sql expr
+
+NULL VALUES - 
+1. we can see null values  - 
+//isNull()/isNotNull()
+but cant directly use sum() as strict type also to check every col null values ek saath we have to use list comp in select
+
+2. we can drop null values - df.na.drop(how='any/all', subset=[]) or ddf.dropna(how='any/all', subset=[])
+Note:- spark doesnt drop columns as it doesnt have axis param but pandas does

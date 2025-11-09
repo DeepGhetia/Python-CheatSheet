@@ -404,4 +404,4 @@ lt1 = [6, 7, 8, 9, 0]
 # | **Select items by condition**    (select)    | `filter(function, iterable)` | Keeps only items where function(item) is True          | Keep only even numbers           |
 # | **Combine all items into one value**   (group)  | `reduce(function, iterable)` | Repeatedly combines items to produce one result        | Sum all numbers, find max        |
 
-#questions like 2341 from LC are good one's to solve
+#questions like 2341 from LC are good one's to solve also LC 2697 two pointer 

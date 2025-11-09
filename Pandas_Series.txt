@@ -34,7 +34,7 @@ Always Note (FOR DATETIME hack):-
   but by default drop=False(This moves the labelled index to column under index column name)
 * similarly there is this parameter ignore_index = True // strictly note this is not a function just a paratmeter used in pd.concat etc.
   this works only with some funcs such as pd.cocnat also note it resets index only when axis=0 and resets col when axis=1
-* we can shuffle the series using reindex method - s = s.reindex([pass the index's])
+* we can shuffle the series using reindex method - s = s.reindex([pass the index's]) //we can also pass columns=list of cols Note:- this is very imp as we can add extra cols look at lc prob:- 1179
 * we can also set a col to index using df.set_index(colname, inplace=True/Fasle)
 * we can also use df.sort_index() to sort the rows based on index of the df/s
 * now to convert df to s - 
@@ -275,7 +275,7 @@ df['col'] = df['col'].shift(1/-1) -> -1 = lead and 1 = lag
         It does similar job as union/unionall n sql for unpivotting rememberthat
         pd.melt(df, id_vars='', value_vars='', var_name='', value_name='')
             id_vars -> it is the main col
-            value_vars -> It is the col that needs to be unpivotted
+            value_vars -> It is the col that needs to be unpivotted #not mandatory
             var_name -> u=once unpivot is completed it is the name of that col
             value_name -> it is the col name of unpivotted data col
             #when unpivotting valuevars has to be passed with list of col name
