@@ -23,7 +23,7 @@
 ########
 # good example for lambda
 # # syntax
-# lambda is one liner no () braces
+# lambda is one liner no () braces = lambda = sedha
 # x = lambda param1, param2, param3: param1 + param2 + param2
 # lambda arguments: value_if_true if condition else value_if_false
 # print(x(arg1, arg2, arg3)) // the main job of lambda is to evaluate the expression and output the result based on th exp
@@ -313,7 +313,6 @@ lt1 = [6, 7, 8, 9, 0]
 
 # in a function pass has to be written as only pass return is not mandatory remember this.
 
-#there is nothing called null in python.
 # #avg 
 # sum(lt)//len(lt)
 #sometimes try to use map and lambda they are deadly duo
@@ -404,4 +403,4 @@ lt1 = [6, 7, 8, 9, 0]
 # | **Select items by condition**    (select)    | `filter(function, iterable)` | Keeps only items where function(item) is True          | Keep only even numbers           |
 # | **Combine all items into one value**   (group)  | `reduce(function, iterable)` | Repeatedly combines items to produce one result        | Sum all numbers, find max        |
 
-#questions like 2341 from LC are good one's to solve also LC 2697 two pointer 
+#questions like 2341 from LC are good one's to solve also LC 2697 two pointer q

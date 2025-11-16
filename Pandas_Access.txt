@@ -1,7 +1,11 @@
 when we talk about accessing in pandas - 
+
+    //here you have choie row/col or both
     1. df.loc[row,col] - in rows slicing is allowed and in columns also but we can pass the list in columns also (slicing allowed all inclusive) 
     syntax:- df.loc[start:stop:step]
     2. df.iloc[row,col] - i(integer) - we can only use integer in both rows and columns (slicing allowed)
+
+    //here you dont have choice
     3. df.at[row,col] - salar value access means we can pass only 1 index and 1 col at a time
     4. df.iat[row,col] - similar to at but integer
 

@@ -181,7 +181,7 @@ also there should not be any duplicates in any of the labelled index.
         //this is basically guessing the data between a start and end point remeber it.
         // works only for integers gives warning for string types
 
-* Methods to deal with duplicate values - 
+* Methods to deal with duplicate values (subst passed is taken together i.e. all the cls in subset taken together) - 
     *to check the duplicate values in 
         series = s.duplicated(keep='first/last/' or false) #keep = first means mark first rec as non dup and rest as dup's similary last and false means mark all as dup's
         df's = df.duplicated(keep, subset=[col,col]) #subset is the col to include without which complete record will be considerered as criteria
@@ -250,6 +250,7 @@ also there should not be any duplicates in any of the labelled index.
 
 #lead/#lag
 df['col'] = df['col'].shift(1/-1) -> -1 = lead and 1 = lag
+df['col'] = df.groupby('col')['col'].shift(-1/1)
 
 #PIVOT AND PIVOT_TABLE
     1. Pivot - Reshape the data but without groupby (on unique data only col/col+index)
@@ -262,8 +263,8 @@ df['col'] = df['col'].shift(1/-1) -> -1 = lead and 1 = lag
     2. PIVOT_TABLE - 
         df.pivot_table in this we have mainly 5 parameter
             index, values, columns, fill_value, aggfunc
-            by default pivot table will need atleast cloumns or index to be passed for grouping 
-            and also if my complete df excpet the columns passed in index/columns param are number then mean will be calculated.
+            by default pivot table will need atleast cloumns or index to be passed for grouping
+            and also if my complete df excpet the columns passed in index/columns param are number then "mean" will be calculated.
             1. by default index/columns needed and aggfunc = mean(auto applied if not passed)
             2. If you want both group-by columns as row hierarchy → put both in index.
                If you want one to spread horizontally like pivoted columns → put one in index, one in columns.

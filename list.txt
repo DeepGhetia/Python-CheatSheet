@@ -8,9 +8,9 @@
 
 *** one good advice is say you have 2 iterators and you want to iterate both but want a single value then all()/any() is very helpfull.
 *** similart to string 'deep'*3 = deepdeepdeep like wise [2]*3 = [2,2,2] jaise string is one but deep repeats 3 times similarly lt is one but 2 repeats 3 times.
-*** list is dynamic len changes dynamically based on ele inserted/deletded.
-on replacing when replace with single values the replaced item is a list 
-on replacing the sliced list the items get unpacked.
+*** list is dynamic len changes dynamically based on ele inserted/deletded (lt.pop()).
+on replacing when replace with single values the replaced item is a list
+on replacing the sliced list the items get unpacked and only allowed to pass iterable not any sigle value.
 
 *** always remember in list whenever we use INSERT(pos,value) sataement in list then it will replcae the existing value and move the current value 
     to next position but when we use lt[1] = 5 i.e. replacing the existing value only when list is existing it will just replace the

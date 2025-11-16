@@ -9,7 +9,7 @@ Default methods
     8. startswith() and endswith()
     9. isNull() and isNotNull() note diff frm pandas notnull() and isnull()
     10. alias() -> note this gives only temp rename not like withColumnRenamed() //used in select 
-    11. expr() -> used to use sql inside this pure sql like postgre eveything works
+    11. expr(str) -> used to use sql inside this pure sql like postgre eveything works // this is not a default method
 
 Functions/Methods under pyspark.sql.functions - 
 2. col() is used to select the col
@@ -26,7 +26,7 @@ Str -
 4. to replace we have to use regexp_replace(col,this,with that)
 5. translate() ->
         ex:- translate(col, 'aA', 'bB')
-                this is also used to replace but char to char mapping a->A, b->b
+                this is also used to replace but char to char mapping a->b, A->B
 6. cocnat() vs concat_ws()
     //cocnat is used to concat multiple strings with literal but literal explicitly passed but cocnatws not passing extra
     //null in one string in concat means complete string null but not in case of concat_ws
@@ -65,8 +65,8 @@ datetime func's built-
 6. timedelta in spark - 
     1. date_add(col,no of days)
     2. date_sub(col,no of dats)
-7. relativedelta in spark - 
-    1. add_months(col, no of months)
+7. relativedelta in spark -
+    1. add_months(col, no of months) for sub give neagetive value
 8. datediff(col1,col2)
 9. year(),month(),day(),dayofweek,dayofmonth,dayofyear,quarter,hour,minute,second,weekofyear
 
