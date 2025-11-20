@@ -1,0 +1,1 @@
+1. shuffle is most costly operation hence avoid wide operation or get the data to that stage where data is less hence little shuffle.

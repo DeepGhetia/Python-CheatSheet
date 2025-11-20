@@ -1,5 +1,6 @@
 #think logically pleae incase of list, tup, dic, set
 
+#true / false is everything in python/pandas/spark
 #only == and != can work for string
 #using multiple for loops is the key remeber that
 #'deep'*2 = 'deepdeep' similarly lt = [2], lt*2, [2,2]

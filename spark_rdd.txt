@@ -1,0 +1,24 @@
+1. sparkContext(sc) comes inside spark and it is the entry point to all the worker nodes where as saprksession is teh entry point for spark
+    SparkContext is the entry point to low-level RDD operations and cluster communication.
+    SparkSession is the higher-level unified entry point to Spark, including SQL, DataFrame, Dataset, and also exposes SparkContext internally.
+2. parallelize(iterable) //this doest give df but just transfer sthe data from driver node to worker
+3. .toDF([lit of col]) or .createDF(rdd)
+4. .collect()/take/show get the result from worker to driver node //every action send te result from worker node to driver node
+5. we can also use .take(no of records to display)
+6. getNumPartitions() to get the no of partitions 
+7. there are 2 properties 1. defaultParallelism 2. defaultMinPartitions //note these are properties nt methods
+8. map() and flatmap()
+9. reduce() and reduceByKey()
+    reducebykey is (transformation) and works on pair i.e. key value pair
+    reduce is an (action) -> Y action because there is no other transformation can be applied to a single value
+10. reducebykey vs groupbykey()
+
+11. filter()
+12. rdd1.join(rdd2) -  //join is a wide transformation
+    here we have a problem there is a shuffle which is costly hence use boradcasting
+    broadcasting var or broadcasting join - 
+    but to do boradcasting, you cannot do it in worker node you have to do it from driver node - 
+    so you can use an action as action returns df/scalar value to driver program
+    sytax - final = spark.sc.broadcast(smallrdd.collect())
+    and nothing to further also advantage of bradcadting is no shuffle at all hence broadcasting is a narrow transformation
+    
