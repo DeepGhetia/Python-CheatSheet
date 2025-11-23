@@ -1,4 +1,4 @@
-Note:- 
+Note:-
 1. Pyspark is list and tup friendly and not dic.
 2. Packing and Unpacking concept is imp here.
 3. pyspark follows strictness (example data types like array and map) and immutability (example creating a new df).
@@ -20,6 +20,13 @@ emty df can be created using 4 methods ony -
     4. structype along with structfield\
 
 to convert rdd to df - toDF([col names]) or createDF(pass rdd here, schema=shcema)
+
+#reading file in df - types(csv, json, jdbc, parquet, orc, table)
+    1. spark.read.csv('file path', header=True/False, inferSchema=True/False)
+    2. spark.read.json('file path')
+    3. spark.read.parquet('file path')
+    4. spark.read.orc('file path')
+    5. spark.read.table('pass view/table name')
 
 #selecting a col
     # 1. df['col']
@@ -82,7 +89,7 @@ Note:- in case of selectexpr we can pass only string but not just a single strin
        has to be individually passed inside the string.
 
 NULL VALUES - 
-1. we can see null values  - 
+1. we can see null values  -
 //isNull()/isNotNull()
 but cant directly use sum() as strict type also to check every col null values ek saath we have to use list comp in select
 

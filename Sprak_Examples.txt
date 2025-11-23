@@ -1,5 +1,0 @@
-1. Get transactions that satisfy any two of the following conditions (i.e. at least 2 must be true):
-    status = 'Success'
-    meta.isInternational = true
-    amount > 5000
-2.
