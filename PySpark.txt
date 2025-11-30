@@ -7,7 +7,8 @@ Note:-
 6. Most important withcol and select works same row wise but there is a big dif
     1. withcol works row wuse only and no groupbing/agg allowed also withcol is tough to use with more col at a time
     2. select is dynamic wiorks rowwise also and agg also allowed but not together note that
-    
+7. date will always b read in y,m,d,h,m,s format only and nothing else is allowed but can be changed later
+
 from pyspark.sql import SparkSession
 from pyspark.sql.types import *
 from pyspark.sql.functions import col, lit, row, upper, lower, cast(astype can also be used but astype is builtin), concat, datediff, concat_ws, when, round
@@ -22,7 +23,13 @@ emty df can be created using 4 methods ony -
 to convert rdd to df - toDF([col names]) or createDF(pass rdd here, schema=shcema)
 
 #reading file in df - types(csv, json, jdbc, parquet, orc, table)
-    1. spark.read.csv('file path', header=True/False, inferSchema=True/False)
+    1. spark.read.csv('file path', 
+                       header=True/False, 
+                       inferSchema=True/False, 
+                       samplingRatio=.1(very imp in production but not recommended),
+                       schema=shcema,
+                       dateFormat='',
+                       mode='failfast/permissive(default)/dropmalformed')
     2. spark.read.json('file path')
     3. spark.read.parquet('file path')
     4. spark.read.orc('file path')
@@ -89,6 +96,14 @@ Note:- in case of selectexpr we can pass only string but not just a single strin
        has to be individually passed inside the string.
 
 NULL VALUES - 
+***while reading this is very imp - 
+    if there is data type mismatch while reading the data then default behaviour or spark is it gives null values for the values it failed to parse the data.
+
+    However can be corrected with other modes - 
+        1. fail fast (error if datatype mismatch)
+        2. permissive (default if mismatch then null)
+        3. dropmalformed (drop recs if datatype mismatch)
+
 1. we can see null values  -
 //isNull()/isNotNull()
 but cant directly use sum() as strict type also to check every col null values ek saath we have to use list comp in select

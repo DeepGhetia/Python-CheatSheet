@@ -405,3 +405,4 @@ lt1 = [6, 7, 8, 9, 0]
 # | **Combine all items into one value**   (group)  | `reduce(function, iterable)` | Repeatedly combines items to produce one result        | Sum all numbers, find max        |
 
 #questions like 2341 from LC are good one's to solve also LC 2697 two pointer q
+#remember that to find the max number use sorted max or if neg numbers pleae use first neg and last max

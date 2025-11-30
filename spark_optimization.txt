@@ -1,1 +1,8 @@
 1. shuffle is most costly operation hence avoid wide operation or get the data to that stage where data is less hence little shuffle.
+there are types of optimization - 
+    1. code level
+        - use cache
+        - use reducebykey over groupbykey
+        - use broadcast var over join for dimenasion tables
+        - select vs wothcolumn for more columns
+    2. cluster level (executors) -
