@@ -25,4 +25,4 @@
     so you can use an action as action returns df/scalar value to driver program
     sytax - final = spark.sc.broadcast(smallrdd.collect())
     and nothing to further also advantage of bradcadting is no shuffle at all hence broadcasting is a narrow transformation
-    
+13. caching in rdd and df is lazy but in spark sql by default it is eager we can change it to lazy also.
