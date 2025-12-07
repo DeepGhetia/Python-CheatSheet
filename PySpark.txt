@@ -139,5 +139,13 @@ GROUPBY-
         agg_df = df.groupBy("group_key").agg
         (sum(when(F.col("amount") > 200, 1).otherwise(0)).alias("cnt_amount_gt_200")) //all the rest 3 staaments in pandas are covered in this single line
 
-Imp - collect_list(),collect_set() both are used to merge rows to array
+Imp:-
+- collect_list(),collect_set() both are used to merge rows to array
+- also we can use many other functions like round/ceil/floor etc directly on agg fun like round(sum()) not like pandas o be used after grouping.
 
+SORTING-
+Syntax:- df.orderBy(col('').asc(),col().desc())
+ordering func - 
+    1. asc()/desc()
+    2. asc_nulls_first()/desc_nulls_first()
+    3. desc_nulls_last()/asc_nulls_last()
