@@ -143,9 +143,12 @@ Imp:-
 - collect_list(),collect_set() both are used to merge rows to array
 - also we can use many other functions like round/ceil/floor etc directly on agg fun like round(sum()) not like pandas o be used after grouping.
 
-SORTING-
-Syntax:- df.orderBy(col('').asc(),col().desc())
-ordering func - 
-    1. asc()/desc()
-    2. asc_nulls_first()/desc_nulls_first()
-    3. desc_nulls_last()/asc_nulls_last()
+SORTING (2 OPTIONS)-
+Syntax:- 
+1. df.orderBy(col('').asc(),col().desc())
+    ordering func - 
+        1. asc()/desc()
+        2. asc_nulls_first()/desc_nulls_first()
+        3. desc_nulls_last()/asc_nulls_last()
+
+2. df.sort(['dept','salary','age'],ascending=[True,False,True]) //same as pandas but sort() instead of sort_values()
