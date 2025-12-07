@@ -1,4 +1,5 @@
 1. shuffle is most costly operation hence avoid wide operation or get the data to that stage where data is less hence little shuffle.
+wide tran maens 200 part by default as er config
 there are types of optimization - 
     1. code level
         - use cache
@@ -25,7 +26,7 @@ scenario where cache can have less performance -
 when compare to cacehd data as in cache scenario we have to scan the data though it is fast as process local
 
 Persist - 
-from pyspark.storagelevel import storagelevel
+from pyspark.storagelevel import StorageLevel
 
 df1 = df.persist(StorageLevel(param1,param2,param3,param4,param5))
 param - 

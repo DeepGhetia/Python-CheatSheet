@@ -116,7 +116,28 @@ to check duplicates use rank/groupby  - sql logic as there is none in spark
 1. to get only unique recs - having count = 1
 2. to get the count of dup recs incluing unique in dup - having count > 1
 3. to get only dup values then rownumber() and rank>1
+4. dropdup + count()
 
 to drop duplicates same as pandas  - 
     1. df.distinct() check for complete rows no other paratmeter it takes
     2. df.dropDuplicates(subset=) // same as pandas but no keep=
+
+Very Imp:-
+GETTING AGG VALUES W/O GRUPING CAN BE HANDLED USING select()
+Ex:-
+1. select(sum(col('amt)).alias('amt))
+2. select(count('*').alias('cnt'))
+3. select((100.0*(sum(expr('CASE WHEN rebuffer_events > 0 THEN 1 END as event'))/count('*'))).alias('val'))
+
+GROUPBY-
+1. syntax = df.groupBy('' or ['','']).agg(
+    count('' or '*'),sum(),max(),min(),mean/avg()/countDistinct('' or '*')('' or '*'),approx_count_distinct(),sumDistinct(),first(),last()
+    //note here '*' means complete row like count(1) or count(*) in sql
+)
+2/3/4. sum(case when amount > 200 then 1 else 0 end) --->
+    we can directly use when().otherwise() like case when in sql in sum() or any method ->
+        agg_df = df.groupBy("group_key").agg
+        (sum(when(F.col("amount") > 200, 1).otherwise(0)).alias("cnt_amount_gt_200")) //all the rest 3 staaments in pandas are covered in this single line
+
+Imp - collect_list(),collect_set() both are used to merge rows to array
+
