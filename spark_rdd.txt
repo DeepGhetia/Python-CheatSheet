@@ -2,6 +2,7 @@
       df = schema on rdd (metadata)
       spark.sql -> data and schema ar diff places consider example of External Tables
 
+//to come from higher level df to rdd and use rdd methods syntax is  - df.rdd.rddfuncs
 1. sparkContext(sc) comes inside spark and it is the entry point to all the worker nodes where as saprksession is teh entry point for spark
     SparkContext is the entry point to low-level RDD operations and cluster communication.
     SparkSession is the higher-level unified entry point to Spark, including SQL, DataFrame, Dataset, and also exposes SparkContext internally.
@@ -9,7 +10,9 @@
 3. .toDF([lit of col]) or .createDF(rdd)
 4. .collect()/take/show get the result from worker to driver node //every action send te result from worker node to driver node
 5. we can also use .take(no of records to display)
-6. rdd.getNumPartitions() to get the no of partitions 
+6. for 
+   rdd - rdd.getNumPartitions() to get the no of partitions
+   df - df.rdd.getNumPartitions() to get the no of partitions
 7. there are 2 properties 1. defaultParallelism 2. defaultMinPartitions //note these are properties nt methods
 8. map() and flatmap()
 9. reduce() and reduceByKey()

@@ -6,6 +6,7 @@ there are types of optimization -
         - use reducebykey over groupbykey
         - use broadcast var over join for dimenasion tables
         - select vs wothcolumn for more columns
+        - partitionBy()/bucketBy() // called as partition pruning
     2. cluster level (executors) -
 
 cache (very imp)- 
@@ -41,4 +42,4 @@ to uncache or unpersist - unpersist()
 ***logical plan
 1. spark pushes filter pushes up in order called as predicate push down
 2. okay so process local means same exe and node local means same machine or node
-3. in case of cache process local is mostly cahced data and other in node local 
+3. in case of cache process local is mostly cahced data and other in node local

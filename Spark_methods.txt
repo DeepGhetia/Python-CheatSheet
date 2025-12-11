@@ -9,8 +9,9 @@ Default methods
     8. startswith() and endswith()
     9. isNull() and isNotNull() note diff frm pandas notnull() and isnull()
     10. alias() -> note this gives only temp rename not like withColumnRenamed() //used in select 
-    11. expr(str) -> used to use sql inside this pure sql like postgre eveything works // this is not a default method
-
+    11. expr(str) -> used to use sql inside this pure sql like postgre eveything works // this is not a default method -> this is called as column expression
+        Also expr can be used with any function not just withcolumn and select ------- remember
+        
 Functions/Methods under pyspark.sql.functions - 
 2. col() is used to select the col
 3. round, ceil, floor, abs ,pow, sqrt
